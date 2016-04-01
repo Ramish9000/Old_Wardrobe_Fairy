@@ -16,9 +16,11 @@ function mainController(Upload, API, S3_BUCKET, TokenService, User, $timeout) {
   self.randomBottom = "";
   self.user = !!TokenService.getToken() ? TokenService.getUser() : null;
 
+  console.log("TEST" + !!TokenService.getToken() ? TokenService.getUser() : null)
+
   function getUser() {
     console.log("getting user!!");
-  	User.get({ id: self.user._id }, function(user) {
+  	User.get({ id: self.user._doc._id }, function(user) {
   		self.usersClothing = user.clothing.map(function(clothing) {
     		clothing.image = S3_BUCKET + clothing.image;
     		return clothing;

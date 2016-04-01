@@ -8,6 +8,6 @@ var clothesController = require('../controllers/clothesController');
 router.post('/signup', authenticationController.signup);
 router.post('/login', authenticationController.login);
 
-router.get('/users/:id', usersController.showUser);
+router.get('/users/:_id', usersController.showUser);
 
 module.exports = router;
