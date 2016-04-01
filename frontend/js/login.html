@@ -1,0 +1,17 @@
+<div id="main-div">
+	<img ng-src="./css/Images1/logo.jpg" class="circle">
+	<h3 id="caption">Wardrobe Fairy</h3>
+
+	<form id="button_div" ng-submit="users.login()">
+	        <input type="text" id="login" name="login" placeholder="Username" ng-model="users.user.username">
+	        <input type="password" name="password" id="password" placeholder="Password" ng-model="users.user.password"> 
+	    	<button type="submit" name="submit" class="waves-effect btn-large" id="login_login_button">
+	    		LOGIN
+	    	</button>
+	</form>
+
+	<div id="guest_div">
+		<a ui-sref="upload"><p>Guest Login</p></a>
+	</div>
+</div>
+

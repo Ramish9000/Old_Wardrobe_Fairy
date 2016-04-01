@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "authors": [
+    "ramish1991 <arona000@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-file-upload": "~10.1.9"
+  }
+}

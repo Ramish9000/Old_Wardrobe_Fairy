@@ -1,0 +1,34 @@
+<!-- NAVBAR -->
+<section>
+	<div id="main_div" position='absolute'>
+		<!-- 1 -->
+		<div class="inner_divs" id="uploader_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="upload">UPLOADER</a>
+		</div>
+
+		<!-- 2 -->
+		<div class="inner_divs" id="generator_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="generator">GENERATOR</a>
+		</div>
+
+		<div id="image_div">
+			<img ng-src="../css/Images1/logo.jpg" ng-click="main.generateClothes()">
+		</div>
+
+		<div class="inner_divs" id="about_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="about">ABOUT US</a>
+		</div>
+
+		<div class="inner_divs" id="contact_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="">WARDROBE</a>
+		</div>
+	</div>
+
+	<div id="second_main_div">
+	<h6 style="color: white"> Click the Fairy above to get her opinion on what you should wear. </h6>
+		<!-- <img ng-src="./css/images/wlc-fairy-pn.png" class="wlc-fairy" ng-click="main.generateClothes()"> -->
+		<img ng-show="main.randomTop" ng-src="{{main.randomTop}}" class="clothing-img">
+		<img ng-show="main.randomBottom" ng-src="{{main.randomBottom}}" class="clothing-img">
+	</div>
+
+</section>

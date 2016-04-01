@@ -1,0 +1,55 @@
+<section>
+
+	<!-- NAVBAR -->
+	<div id="main_div" position='absolute'>
+		<!-- 1 -->
+		<div class="inner_divs" id="uploader_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="upload">UPLOADER</a>
+		</div>
+
+		<!-- 2 -->
+		<div class="inner_divs" id="generator_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="generator">GENERATOR</a>
+		</div>
+
+		<div id="image_div">
+			<img src="../css/Images1/logo.jpg">
+		</div>
+
+		<div class="inner_divs" id="about_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="about">ABOUT US</a>
+		</div>
+
+		<div class="inner_divs" id="contact_div" position='relative'>
+			<a class="waves-effect btn-large" ui-sref="">WARDROBE</a>
+		</div>
+	</div>
+
+
+	<div id="second_main_div">
+		<h6 style="color: white">
+			<!-- <hr> -->
+			Upload your wardrobe items below, and let the wardrobe fairy handle it.
+			<!-- <hr> -->
+		</h6>
+
+		<form name="main.form" ng-submit="main.uploadSingle()" id="uploader_form" class="ac-custom ac-checkbox ac-cross">
+			<ul>
+			<input type="file"	ngf-select ng-model="main.file" name="file">
+
+				<li><input checklist-model="main.clothingType" value="top" id="cb1" name="cb1" type="checkbox"><label for="cb1">Top</label></li>
+				<li><input checklist-model="main.clothingType" value="bottom" id="cb2" name="cb2" type="checkbox"><label for="cb2">Bottom</label></li>
+				<!-- <option value="top" class="">Top</option> -->
+				<!-- <option value="bottom" class="icon-bear">Bottom</option> -->
+			<button type="submit" name="submit" class="uploader_submit waves-effect btn-large">
+				Submit
+			</button>
+			</ul>
+		</form>
+
+		<div ng-repeat="clothing in main.usersClothing">
+			<img ng-src="{{clothing.image}}" class="clothing-img">
+		</div>
+
+	</div>
+</section>

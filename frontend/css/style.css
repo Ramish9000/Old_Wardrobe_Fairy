@@ -1,0 +1,221 @@
+/*NAVBAR*/
+#main_div {
+  width: 1300px;
+  height: 200px
+}
+
+.inner_divs {
+  float: left;
+}
+
+#uploader_div {
+  width: 200px; 
+  margin: 70px 20px 40px 60px;
+}
+
+#generator_div {
+  width: 200px; 
+  margin: 70px 20px 40px 20px;
+}
+
+#image_div { /*Image*/
+  float: left;
+  margin: auto 20px;
+  background-color: none !important
+}
+#image_div > img {
+  width: 200px;
+}
+
+#about_div {
+  width: 200px;
+  margin: 70px 20px 40px 60px;
+}
+
+#contact_div {
+  width: 200px;
+  margin: 70px 20px 40px 20px;
+}
+
+#uploader_form {
+  width: 200px;
+}
+
+#uploader_form > input {
+  width: 100px
+  height: 100px;
+}
+
+.uploader_submit {
+  /*width: 50px !important*/
+  border: none !important
+}
+
+/*SECOND DIV*/
+#second_main_div {
+  width: 1000px;
+  /*background-color: red;*/
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+#button_div > input {
+  color: white !important
+
+}
+
+input:focus {
+  background-color: none !important;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #232947 inset !important;
+    -webkit-text-fill-color: #8D99AE !important;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow:0 0 0 50px #232947 inset !important;
+    -webkit-text-fill-color: #8D99AE !important;
+} 
+
+#button_div {
+}
+
+.wlc-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -10;
+  background-color: #232947
+}
+
+
+/*WELCOME FAIRY*/
+body {
+    margin: 0;
+    padding: 0;
+    /*text-align: center;*/
+}
+
+@font-face {
+    font-family: caption;
+    src: url(./fonts/allura/Allura-Regular.ttf) format('truetype');
+    font-weight: bold;
+}
+
+.wlc-txt {
+  font-family: Wizards Magic;
+  color: #FF1654;
+  font-size: 100px;
+  margin-left: 300px;
+  z-index: 10;
+}
+
+#main-div {
+  position: absolute;
+  width: 300px;
+  /*background-color: blue;*/
+  margin-left: 500px;
+}
+
+.circle {
+  width: 280px;
+  margin-top: 2%
+}
+
+#caption {
+  font-family: caption;
+  color: white;
+  font-size: 50px;
+}
+
+
+/*CLOTHING IMAGE*/
+.clothing-img {
+   width: 300px;
+   height: 300px;
+}
+
+.fairy-pik {
+   width: 300px;
+   height: 300px;
+   margin-top: 100px;
+   margin-left: 600px;
+}
+
+
+
+                                      /*LOGIN SIGNUP BUTTON*/
+.waves-effect {
+  border: 1px solid white;
+  border-radius: 5px;
+  /*background: none;*/
+  /*outline: none;*/
+  /*cursor: pointer;*/
+  font-weight: 200;
+}
+
+.waves-effect:hover {
+  background: #A7383E;
+  color: #FFF;
+}
+
+.waves-effect:active {
+  background: #7D151A;
+}
+
+#buttons > a {
+  margin-top: 10px;
+}
+
+.btn-large {
+  background-color: #232947;
+}
+
+select {
+  display: block!important;
+}
+
+.temp {
+  margin-top: 600px;
+}
+
+#buttons_div {
+  /*margin-left: 20px*/
+  /*text-align: center;*/
+}
+
+#welcome_login_button {
+  margin-left: 30px
+}
+
+#login_login_button {
+  margin-left: 100px
+}
+
+
+
+
+
+
+
+/*ABOUT US PAGE*/
+#phoebe_img {
+  width: 400px;
+}
+
+
+#guest_div > a {
+  margin-top: 10px;
+  color: grey !important
+}
