@@ -1,5 +1,5 @@
 var bucket = 'wardrobefairy';
-var region = 'Oregon';
+var region = 'us-west-2';
 
 module.exports = {
   bucket: bucket,

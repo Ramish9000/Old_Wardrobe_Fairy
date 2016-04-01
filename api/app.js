@@ -14,6 +14,7 @@ var config     		  = require('./config/config');
 var routes 			    = require('./config/routes');
 var secret 			    = config.secret
 var User          	= require('./models/user');
+// var usersController = require('./controllers/usersController')
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -32,6 +33,8 @@ app.use(cors({
 app
   .use('/api/upload/single', expressJWT({secret: config.secret}));
 
+
+
 //Handling error on unauthorized page access
 app.use(function (error, request, response, next) {
   if (error.name === 'UnauthorizedError') {
@@ -39,21 +42,12 @@ app.use(function (error, request, response, next) {
   }
 });
 
-// Setting headers to handle Authorization
-// app.use(function(req, res, next) {
-//   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-//   next();
-// });
-
 // MULTER
 var s3config = require('./config/s3');
 var upload = multer({
   storage: s3({
     dirname: s3config.dirname,
     bucket: s3config.bucket,
-    // secretAccessKey: process.env.AWS_ACCESS_SECRET,
     secretAccessKey: process.env.AWS_ACCESS_SECRET,
     accessKeyId: process.env.AWS_ACCESS_KEY,
     region: s3config.region,
@@ -80,13 +74,13 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
     user.clothing.push(clothing_1);
     // save this user
     user.save(function(err, user){
-      if(err) return res.status(401).send({ message: err });
+      if(err) return res.status(401).send({ message: 'your error:' + err });
       else return res.json({ user: user })
     });
   });
 
 });
-
+// app.get('api/users', usersController.showUser);
 app.use('/api', routes);
 
 app.listen(3000);

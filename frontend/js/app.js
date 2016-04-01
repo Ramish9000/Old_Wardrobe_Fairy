@@ -1,7 +1,7 @@
 angular
 	.module('wardrobe-fairy', ['angular-jwt', 'ngResource', 'ui.router', 'ngFileUpload'])
 	.constant('API', 'http://localhost:3000/api')
-	.constant('S3_BUCKET', 'https://s3-oregon.amazonaws.com/wardrobefairy/')
+	.constant('S3_BUCKET', 'https://s3-us-west-2.amazonaws.com/wardrobefairy/')
 	// .config(function($httpProvider) {
 	//     $httpProvider.interceptors.push('AuthInterceptor');
 	//   })
