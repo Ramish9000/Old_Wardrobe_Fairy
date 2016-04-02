@@ -24,6 +24,8 @@ app.use(cookieParser());
 //connection to database
 mongoose.connect(config.database);
 
+app.use('/api', routes);
+
 app.use(cors({
   origin: "http://localhost:8000",
   credentials: true
@@ -81,6 +83,5 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
 
 });
 // app.get('api/users', usersController.showUser);
-app.use('/api', routes);
-
-app.listen(3000);
+var port = Number(process.env.PORT || 3000)
+app.listen(port);
