@@ -72,9 +72,6 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
     type: req.body.type,
     image: req.file.key
   };
-  console.log('req.body =' + req.body);
-  console.log('req.body.type =' + req.body.type);
-  console.log('req.file.key =' + req.file.key);
   // get the user model User.findOne({ id: req.user._id })
   User.findOne({ _id: req.user._id }, {}, { new: true }, function(err, user){
     user.clothing.push(clothing_1);
