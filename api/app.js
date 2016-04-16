@@ -20,16 +20,17 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors());
 
 //connection to database
 mongoose.connect(config.database);
 
 app.use('/api', routes);
 
-app.use(cors({
-  origin: "http://localhost:8000",
-  credentials: true
-}));
+// app.use(cors({
+//   origin: "http://localhost:8000",
+//   credentials: true
+// }));
 
 //App will use secret created in config file
 app
@@ -41,6 +42,7 @@ app
 app.use(function (error, request, response, next) {
   if (error.name === 'UnauthorizedError') {
     response.status(401).json({message: 'You need an authorization token to view this page.'});
+    console.log('Unauthorisation Error')
   }
 });
 
