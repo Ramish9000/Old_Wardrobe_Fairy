@@ -28,15 +28,18 @@ angular
 			})
 			.state('upload', {
 				url: "/upload",
-				templateUrl: "js/upload.html"
+				templateUrl: "js/upload.html",
+				controller: "mainController as main"
 			})
 			.state('generator', {
 				url: "/generator",
-				templateUrl: "js/generator.html"
+				templateUrl: "js/generator.html",
+				controller: "mainController as main"
 			})
 			.state('about', {
 				url: "/about",
-				templateUrl: "js/about.html"
+				templateUrl: "js/about.html",
+				controller: "mainController as main"
 			})
 
 
