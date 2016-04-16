@@ -3,18 +3,17 @@ var expressJWT 		  = require("express-jwt");
 var multer 			    = require('multer');
 var s3 				      = require('multer-s3');
 var uuid 			      = require('uuid');
-var path          	= require('path');
 var morgan        	= require('morgan');
 var cookieParser  	= require('cookie-parser'); 
 var bodyParser    	= require('body-parser');
 var cors            = require('cors');
-var app           	= express();
 var mongoose      	= require('mongoose');
 var config     		  = require('./config/config');
 var routes 			    = require('./config/routes');
-var secret 			    = config.secret
 var User          	= require('./models/user');
-// var usersController = require('./controllers/usersController')
+var app             = express();
+var secret          = process.env.WARDROBE_FAIRY_SECRET
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -22,27 +21,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors());
 
-//connection to database
-mongoose.connect(config.database);
-
+// Api routes
 app.use('/api', routes);
 
-// app.use(cors({
-//   origin: "http://localhost:8000",
-//   credentials: true
-// }));
+//Connection to database
+var databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wardrobe-fairy-db';
+mongoose.connect(databaseUrl);
 
 //App will use secret created in config file
 app
   .use('/api/upload/single', expressJWT({secret: config.secret}));
 
-
-
 //Handling error on unauthorized page access
 app.use(function (error, request, response, next) {
   if (error.name === 'UnauthorizedError') {
     response.status(401).json({message: 'You need an authorization token to view this page.'});
-    console.log('Unauthorisation Error')
   }
 });
 
@@ -72,10 +65,10 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
     type: req.body.type,
     image: req.file.key
   };
-  // get the user model User.findOne({ id: req.user._id })
+  //Getting the user model to push uploaded clothing
   User.findOne({ _id: req.user._doc._id }, {}, { new: true }, function(err, user){
     user.clothing.push(clothing_1);
-    // save this user
+    //Saving this user
     user.save(function(err, user){
       if(err) return res.status(401).send({ message: 'your error:' + err });
       else return res.json({ user: user })
@@ -83,6 +76,6 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
   });
 
 });
-// app.get('api/users', usersController.showUser);
+
 var port = Number(process.env.PORT || 3000)
 app.listen(port);
