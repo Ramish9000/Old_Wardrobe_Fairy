@@ -13,6 +13,9 @@ function AuthInterceptor (API, TokenService) {
 			if(config.url.match(API) && token) {
 				config.headers.Authorization = "Bearer " + token;
 			}
+			console.log("AuthInterceptor config next")
+			console.log(config);
+			console.log("AuthInterceptor config.headers next")
 			console.log(config.headers);
 			return config;
 		},
