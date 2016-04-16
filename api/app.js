@@ -73,7 +73,7 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
     image: req.file.key
   };
   // get the user model User.findOne({ id: req.user._id })
-  User.findOne({ _id: req.user._id }, {}, { new: true }, function(err, user){
+  User.findOne({ _id: req.user._doc._id }, {}, { new: true }, function(err, user){
     user.clothing.push(clothing_1);
     // save this user
     user.save(function(err, user){
