@@ -22,8 +22,7 @@ function UsersController(User, TokenService) {
 	}
 
 	self.login = function() {
-		console.log(self.user);
-	  User.login(self.user, handleLogin);
+	 	User.login(self.user, handleLogin);
 	}
 
 	self.logout = function() {
