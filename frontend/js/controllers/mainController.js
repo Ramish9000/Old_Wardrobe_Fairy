@@ -69,7 +69,7 @@ function mainController(Upload, API, S3_BUCKET, TokenService, User, $timeout) {
   	})
     $timeout(function() {
     	self.randomTop = tops[Math.floor(Math.random() * tops.length)];
-    	self.randomBottom = bottoms[Math.floor(Math.random() * tops.length)];
+    	self.randomBottom = bottoms[Math.floor(Math.random() * bottoms.length)];
     });
   }
 }
