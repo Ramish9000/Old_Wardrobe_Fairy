@@ -37,10 +37,16 @@
 			<ul>
 			<input type="file"	ngf-select ng-model="main.file" name="file">
 
-				<li><input checklist-model="main.clothingType" value="top" id="cb1" name="cb1" type="checkbox"><label for="cb1">Top</label></li>
-				<li><input checklist-model="main.clothingType" value="bottom" id="cb2" name="cb2" type="checkbox"><label for="cb2">Bottom</label></li>
-				<!-- <option value="top" class="">Top</option> -->
-				<!-- <option value="bottom" class="icon-bear">Bottom</option> -->
+
+				<!-- <li><input checklist-model="main.clothingType" value="top" id="cb1" name="cb1" type="checkbox"><label for="cb1">Top</label></li> -->
+				<!-- <li><input checklist-model="main.clothingType" value="bottom" id="cb2" name="cb2" type="checkbox"><label for="cb2">Bottom</label></li> -->
+
+
+				<select ng-model="main.clothingType" id="cd-dropdown" class="cd-select">
+					<option value="top" class="icon-monkey">Top</option>
+					<option value="bottom" class="icon-bear">Bottom</option>
+				</select>
+
 			<button type="submit" name="submit" class="uploader_submit waves-effect btn-large">
 				Submit
 			</button>
@@ -49,6 +55,7 @@
 
 		<div ng-repeat="clothing in main.usersClothing">
 			<img ng-src="{{clothing.image}}" class="clothing-img">
+			<h2 style="color: white;">{{clothing.type}}</h2>
 		</div>
 
 	</div>
