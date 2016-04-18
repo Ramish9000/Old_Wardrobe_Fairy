@@ -4,7 +4,7 @@
   "description": "An app that chooses what outfit to wear.",
   "main": "api/server.js",
   "scripts": {
-    "start": "node config/seeds.js | nodemon server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
