@@ -2,9 +2,9 @@
   "name": "wardrobe-fairy",
   "version": "1.0.0",
   "description": "An app that chooses what outfit to wear.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node config/seeds.js | nodemon app.js"
+    "start": "node config/seeds.js | nodemon index.js"
   },
   "author": "",
   "license": "ISC",
