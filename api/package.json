@@ -2,9 +2,9 @@
   "name": "wardrobe-fairy",
   "version": "1.0.0",
   "description": "An app that chooses what outfit to wear.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node config/seeds.js | nodemon index.js"
+    "start": "node config/seeds.js | nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +22,8 @@
     "multer": "^1.1.0",
     "multer-s3": "^1.4.1",
     "uuid": "^2.0.1"
+  },
+  "engines": {
+    "node": "0.10.36"
   }
 }
