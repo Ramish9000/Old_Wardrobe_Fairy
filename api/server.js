@@ -1,7 +1,7 @@
 var express       	= require('express');
 var expressJWT 		  = require("express-jwt");
 var multer 			    = require('multer');
-var s3 				      = require('multer-s3');
+// var s3 				      = require('multer-s3');
 var uuid 			      = require('uuid');
 var morgan        	= require('morgan');
 var cookieParser  	= require('cookie-parser'); 
