@@ -77,5 +77,4 @@ app.post('/api/upload/single', upload.single('file'), function(req, res) {
 
 });
 
-var port = Number(process.env.PORT || 3000)
-app.listen(port);
+app.listen(process.env.PORT || 3000)
