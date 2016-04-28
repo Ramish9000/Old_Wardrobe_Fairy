@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
-var bcrypt  = require('bcrypt');
-var Clothing = require('./clothing');
+var mongoose = require('mongoose'),
+	bcrypt  = require('bcrypt'),
+	Clothing = require('./clothing');
 
 var userSchema = new mongoose.Schema({
 	name: String,

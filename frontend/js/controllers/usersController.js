@@ -3,8 +3,8 @@ angular
 .controller('UsersController', UsersController)
 
 
-UsersController.$inject = ['User', 'TokenService']
-function UsersController(User, TokenService) {
+UsersController.$inject = ['User', 'TokenService', '$window', '$location']
+function UsersController(User, TokenService, $window, $location) {
 	var self = this;
 	self.user  = {};
 

@@ -1,9 +1,22 @@
-/*NAVBAR*/
-#main_div {
+/*WELCOME*/
+#main-div {
   width: 1300px;
-  height: 200px
+  height: 200px;
 }
 
+#main-div {
+  position: absolute;
+  width: 300px;
+  margin-left: 500px;
+}
+
+#upload-main_div {
+  /*position: absolute;*/
+  width: 1300px;
+  height: 200px;
+}
+
+/*NAVBAR*/
 .inner_divs {
   float: left;
 }
@@ -52,6 +65,7 @@
 
 /*SECOND DIV*/
 #second_main_div {
+
   width: 1000px;
   font-size: 20px;
   margin-left: 100px;
@@ -118,13 +132,6 @@ body {
   font-size: 100px;
   margin-left: 300px;
   z-index: 10;
-}
-
-#main-div {
-  position: absolute;
-  width: 300px;
-  /*background-color: blue;*/
-  margin-left: 500px;
 }
 
 .circle {

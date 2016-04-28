@@ -10,5 +10,9 @@
 	    	<button type="submit" name="submit" class="waves-effect btn-large" id='login_login_button'>
 	    		SIGNUP
 	    	</button>
+
+	    	<div ng-show="!!users.isloggedIn()">
+	    		<a ui-sref="upload"><p>ENTER</p></a>
+	    	</div>
 	</form>
 </div>

@@ -10,8 +10,8 @@
 	    	</button>
 	</form>
 
-	<div id="guest_div">
-		<a ui-sref="upload"><p>Guest Login</p></a>
+	<div ng-show="!!users.isloggedIn()">
+		<a ui-sref="upload"><p>Enter</p></a>
 	</div>
 </div>
 

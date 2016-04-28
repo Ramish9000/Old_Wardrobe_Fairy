@@ -1,5 +1,4 @@
 //create a route that will return clothes for the current user based on jwt
-
 var User = require('../models/user');
 
 function getClothes(req, res){

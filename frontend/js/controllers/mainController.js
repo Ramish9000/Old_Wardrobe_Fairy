@@ -21,7 +21,6 @@ function mainController(Upload, API, S3_BUCKET, TokenService, User, $timeout) {
 
   function getUser() {
     console.log("getting user!!");
-    // changed below
   	User.get({ id: self.user._doc._id }, function(user) {
   		self.usersClothing = user.clothing.map(function(clothing) {
     		clothing.image = S3_BUCKET + clothing.image;

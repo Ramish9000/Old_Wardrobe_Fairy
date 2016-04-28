@@ -1,7 +1,7 @@
 <section>
 
 	<!-- NAVBAR -->
-	<div id="main_div" position='absolute'>
+	<div id="upload-main_div" position='absolute'>
 		<!-- 1 -->
 		<div class="inner_divs" id="uploader_div" position='relative'>
 			<a class="waves-effect btn-large" ui-sref="upload">UPLOADER</a>
@@ -27,14 +27,7 @@
 
 
 	<div id="second_main_div">
-		<h6 style="color: white">
-			<!-- <hr> -->
-			<strong>1. </strong><span>Upload image of your clothing.</span>
-			<br>
-			<strong>2. </strong><span>Set Type to the clothing.</span>
-			
-		</h6>
-		</br>
+
 		<form name="main.form" ng-submit="main.uploadSingle()" id="uploader_form" class="ac-custom ac-checkbox ac-cross">
 			<ul>
 			<input type="file"	ngf-select ng-model="main.file" name="file">
