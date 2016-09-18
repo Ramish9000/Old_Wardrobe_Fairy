@@ -29,7 +29,7 @@ var databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wardrob
 mongoose.connect(databaseUrl);
 
 // mongoose.connect('mongodb://localhost/wardrobefairy');
-mongoose.connect('mongodb://heroku_c8zr1w6d:wardrobefairy>@ds033046.mlab.com:33046/heroku_c8zr1w6d');
+// mongoose.connect('mongodb://heroku_c8zr1w6d:wardrobefairy>@ds033046.mlab.com:33046/heroku_c8zr1w6d');
 
 //App will use secret created in config file
 app
