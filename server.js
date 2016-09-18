@@ -28,9 +28,6 @@ app.use('/api', routes);
 var databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wardrobe-fairy-db';
 mongoose.connect(databaseUrl);
 
-// mongoose.connect('mongodb://localhost/wardrobefairy');
-// mongoose.connect('mongodb://heroku_c8zr1w6d:wardrobefairy>@ds033046.mlab.com:33046/heroku_c8zr1w6d');
-
 //App will use secret created in config file
 app
   .use('/api/upload/single', expressJWT({secret: config.secret}));
