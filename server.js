@@ -13,7 +13,7 @@ var routes 			    = require('./api/config/routes');
 var User          	= require('./api/models/user');
 var app             = express();
 // var secret          = process.env.WARDROBE_FAIRY_SECRET
-var secret          = IKnowIShouldPutMySecretInEnvVariableButHerokuIssues
+var secret          = "IKnowIShouldPutMySecretInEnvVariableButHerokuIssues"
 
 
 
@@ -47,7 +47,7 @@ var upload = multer({
   storage: s3({
     dirname: s3config.dirname,
     bucket: s3config.bucket,
-    secretAccessKey: IKnowIShouldPutMySecretInEnvVariableButHerokuIssues,
+    secretAccessKey: "IKnowIShouldPutMySecretInEnvVariableButHerokuIssues",
     accessKeyId: process.env.AWS_ACCESS_KEY,
     region: s3config.region,
     contentType: function(req, file, next) {
