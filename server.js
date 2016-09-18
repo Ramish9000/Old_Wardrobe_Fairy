@@ -30,6 +30,8 @@ app.use('/api', routes);
 var databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/wardrobe-fairy-db';
 mongoose.connect(databaseUrl);
 
+mongoose.connect('mongodb://wardrobefairy:wardrobefairy@ds033046.mlab.com:33046/heroku_c8zr1w6d')
+
 //App will use secret created in config file
 app
   .use('/api/upload/single', expressJWT({secret: config.secret}));
@@ -48,7 +50,8 @@ var upload = multer({
     dirname: s3config.dirname,
     bucket: s3config.bucket,
     secretAccessKey: "IKnowIShouldPutMySecretInEnvVariableButHerokuIssues",
-    accessKeyId: process.env.AWS_ACCESS_KEY,
+    // accessKeyId: process.env.AWS_ACCESS_KEY,
+    accessKeyId: "AKIAJ5VPFD3PT5WUGZJQ",
     region: s3config.region,
     contentType: function(req, file, next) {
       next(null, file.mimetype);
