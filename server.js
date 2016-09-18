@@ -8,9 +8,9 @@ var cookieParser  	= require('cookie-parser');
 var bodyParser    	= require('body-parser');
 var cors            = require('cors');
 var mongoose      	= require('mongoose');
-var config     		  = require('./config/config');
-var routes 			    = require('./config/routes');
-var User          	= require('./models/user');
+var config     		  = require('./api/config/config');
+var routes 			    = require('./api/config/routes');
+var User          	= require('./api/models/user');
 var app             = express();
 var secret          = process.env.WARDROBE_FAIRY_SECRET
 
@@ -40,7 +40,7 @@ app.use(function (error, request, response, next) {
 });
 
 // MULTER
-var s3config = require('./config/s3');
+var s3config = require('./api/config/s3');
 var upload = multer({
   storage: s3({
     dirname: s3config.dirname,
